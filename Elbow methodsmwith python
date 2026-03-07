@@ -1,0 +1,19 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+inertia = []
+K_range = range(1, 8)
+
+for k in K_range:
+    kmeans = KMeans(n_clusters=k, random_state=42, n_init=100)
+    kmeans.fit(X)
+    inertia.append(kmeans.inertia_)
+
+plt.figure(figsize=(10,4))
+plt.plot(K_range, inertia, marker='o', linestyle='--', color='red')
+plt.xlabel('Number of Clusters (k)')
+plt.ylabel('Inertia')
+plt.title('Elbow Method (Customer Spending)')
+plt.show()
