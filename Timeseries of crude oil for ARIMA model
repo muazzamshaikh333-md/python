@@ -1,0 +1,40 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.arima.model import ARIMA
+
+df = pd.read_csv("fuel_prices_1970_2026.csv")
+
+df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)
+
+df.set_index('Date', inplace=True)
+
+data = df['Crude_Oil_Price']
+
+plt.figure(figsize=(10, 5))
+plt.plot(data)
+plt.title("Crude Oil Prices")
+plt.xlabel("Date")
+plt.ylabel("Price")
+plt.grid(True)
+plt.show()
+
+model = ARIMA(data, order=(2, 1, 2))
+
+model_fit = model.fit()
+
+print(model_fit.summary())
+
+forecast = model_fit.forecast(steps=12)
+
+print("\nFuture Predicted Prices:")
+print(forecast)
+
+plt.figure(figsize=(10, 5))
+plt.plot(data, label="Actual Prices")
+plt.plot(forecast, label="Forecast", linestyle='dashed')
+plt.title("ARIMA Forecast of Crude Oil Prices")
+plt.xlabel("Date")
+plt.ylabel("Price")
+plt.legend()
+plt.grid(True)
+plt.show()
