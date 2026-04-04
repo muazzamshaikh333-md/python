@@ -1,0 +1,21 @@
+import numpy as np
+
+marks = float(input("Enter your marks: "))
+
+# Using numpy array (just for demonstration)
+marks_array = np.array([marks])
+
+if marks_array[0] >= 90:
+    grade = "A+"
+elif marks_array[0] >= 80:
+    grade = "A"
+elif marks_array[0] >= 70:
+    grade = "B"
+elif marks_array[0] >= 60:
+    grade = "C"
+elif marks_array[0] >= 50:
+    grade = "D"
+else:
+    grade = "Fail"
+
+print("Your grade is:", grade)
