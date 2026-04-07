@@ -1,0 +1,9 @@
+import numpy as np
+
+num = int(input("Enter a number: "))
+
+if num < 0:
+    print("Factorial does not exist for negative numbers")
+else:
+    fact = np.prod(np.arange(1, num + 1))
+    print("Factorial of", num, "is", fact)
