@@ -1,0 +1,11 @@
+import numpy as np
+
+text = input("Enter a string: ")
+
+arr = np.array(list(text))
+rev = arr[::-1]
+
+if np.array_equal(arr, rev):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
