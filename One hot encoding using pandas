@@ -1,0 +1,23 @@
+import pandas as pd
+
+# Sample dataset
+data = {
+    "name": ["Ali", "Sara", "John", "Ayesha"],
+    "gender": ["Male", "Female", "Male", "Female"],
+    "branch": ["CS", "IT", "CS", "ENTC"]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+print("Original DataFrame:")
+print(df)
+
+# Apply One-Hot Encoding
+df_encoded = pd.get_dummies(df, columns=["gender", "branch"], drop_first=True)
+
+print("\nEncoded DataFrame:")
+print(df_encoded)
+
+# Check number of columns created
+print("\nTotal columns after encoding:", len(df_encoded.columns))
