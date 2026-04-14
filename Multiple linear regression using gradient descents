@@ -1,0 +1,28 @@
+import numpy as np
+
+X = np.array([[1000, 2],
+              [2000, 1],
+              [3000, 4]])
+y = np.array([1, 2, 3])
+
+mean = np.mean(X, axis=0)
+std = np.std(X, axis=0)
+X_scaled = (X - mean) / std
+
+def train(X, y, lr=0.000001, epochs=100):
+    m = np.zeros(X.shape[1])
+    b = 0
+    n = len(y)
+    for i in range(epochs):
+        y_pred = np.dot(X, m) + b
+        dm = (-2/n) * np.dot(X.T, (y - y_pred))
+        db = (-2/n) * np.sum(y - y_pred)
+        m = m - lr * dm
+        b = b - lr * db
+    return m, b
+
+m1, b1 = train(X, y)
+m2, b2 = train(X_scaled, y, lr=0.01)
+
+print("Unscaled:", m1, b1)
+print("Scaled:", m2, b2)
