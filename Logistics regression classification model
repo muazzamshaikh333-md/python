@@ -1,0 +1,56 @@
+# Import libraries
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+
+# Sample dataset (you can replace this with your actual df)
+data = {
+    "study_hours": [1, 2, 3, 4, 5, 6, 7, 8],
+    "prev_score": [40, 50, 60, 65, 70, 75, 80, 90],
+    "result": [0, 0, 0, 1, 1, 1, 1, 1]   # 0 = Fail, 1 = Pass
+}
+
+df = pd.DataFrame(data)
+
+# Features and target
+X = df[["study_hours", "prev_score"]]
+y = df["result"]
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42
+)
+
+# Model
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+# Predictions
+pred = model.predict(X_test)
+proba = model.predict_proba(X_test)
+
+# Outputs
+print("Model Coefficients:")
+print(model.coef_)
+
+print("\nIntercept:")
+print(model.intercept_)
+
+print("\nPredictions:")
+print(pred)
+
+print("\nPrediction Probabilities:")
+print(proba)
+
+# Interpretation
+print("\n--- Interpretation ---")
+feature_names = X.columns
+
+for i in range(len(feature_names)):
+    print(f"{feature_names[i]} coefficient:", model.coef_[0][i])
+
+# Find most influential feature
+if abs(model.coef_[0][0]) > abs(model.coef_[0][1]):
+    print("\nMost influential feature: study_hours")
+else:
+    print("\nMost influential feature: prev_score")
