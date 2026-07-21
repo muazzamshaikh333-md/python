@@ -1,0 +1,89 @@
+
+text = "  hello world 123 python  "
+
+# Original String
+print("Original String :", repr(text))
+
+# 1. upper() -> String ko UPPERCASE me convert karta hai.
+print("\n1. upper() :", text.upper())
+
+# 2. lower() -> String ko lowercase me convert karta hai.
+print("2. lower() :", text.lower())
+
+# 3. strip() -> Starting aur ending ke extra spaces hata deta hai.
+print("3. strip() :", text.strip())
+
+# 4. lstrip() -> Sirf left (starting) ke spaces remove karta hai.
+print("4. lstrip() :", text.lstrip())
+
+# 5. rstrip() -> Sirf right (ending) ke spaces remove karta hai.
+print("5. rstrip() :", text.rstrip())
+
+# 6. replace() -> Ek word ko dusre word se replace karta hai.
+print("6. replace() :", text.replace("python", "Java"))
+
+# 7. split() -> String ko list me tod deta hai.
+print("7. split() :", text.split())
+
+# 8. capitalize() -> Pehla letter capital aur baaki small kar deta hai.
+print("8. capitalize() :", text.strip().capitalize())
+
+# 9. title() -> Har word ka pehla letter capital karta hai.
+print("9. title() :", text.title())
+
+# 10. swapcase() -> Upper ko lower aur lower ko upper bana deta hai.
+print("10. swapcase() :", text.swapcase())
+
+# 11. center() -> String ko center me laata hai.
+print("11. center() :", text.strip().center(40, "-"))
+
+# 12. count() -> Kisi character ya word kitni baar aaya hai batata hai.
+print("12. count('o') :", text.count("o"))
+
+# 13. startswith() -> Check karta hai string kis word se start hoti hai.
+print("13. startswith() :", text.startswith("  hello"))
+
+# 14. endswith() -> Check karta hai string kis word se end hoti hai.
+print("14. endswith() :", text.endswith("python  "))
+
+# 15. find() -> Word ka index batata hai. Nahi mila to -1 return karta hai.
+print("15. find('world') :", text.find("world"))
+
+# 16. index() -> Word ka index batata hai. Nahi mila to error deta hai.
+print("16. index('world') :", text.index("world"))
+
+# 17. isalnum() -> Sirf alphabets aur numbers hain to True.
+print("17. isalnum() :", text.strip().isalnum())
+
+# 18. isalpha() -> Sirf alphabets hain to True.
+print("18. isalpha() :", text.strip().isalpha())
+
+# 19. islower() -> Sab letters lowercase hain to True.
+print("19. islower() :", text.islower())
+
+# 20. isupper() -> Sab letters uppercase hain to True.
+print("20. isupper() :", text.isupper())
+
+# 21. istitle() -> Har word ka pehla letter capital hai to True.
+print("21. istitle() :", text.istitle())
+
+# 22. isspace() -> Sirf spaces hain to True.
+print("22. isspace() :", text.isspace())
+
+# 23. isprintable() -> String me sirf printable characters hain to True.
+print("23. isprintable() :", text.isprintable())
+
+# 24. isidentifier() -> String valid variable name hai ya nahi.
+name = "python3"
+print("24. isidentifier() :", name.isidentifier())
+
+# 25. expandtabs() -> Tab (\t) ko spaces me convert karta hai.
+tab_text = "Python\tJava\tC++"
+print("25. expandtabs() :", tab_text.expandtabs(15))
+
+# 26. zfill() -> Number ke aage 0 laga kar fixed length banata hai.
+print("26. zfill() :", "45".zfill(5))
+
+# 27. join() -> List ke elements ko ek string me jod deta hai.
+words = ["I", "Love", "Python"]
+print("27. join() :", " ".join(words))
