@@ -1,0 +1,15 @@
+def result(name, marks):
+    print("\nStudent Name:", name)
+    print("Marks:", marks)
+
+    if marks >= 35:
+        print("Result: Pass")
+    else:
+        print("Result: Fail")
+
+# User Input
+student_name = input("Enter Student Name: ")
+student_marks = int(input("Enter Marks: "))
+
+# Function Call
+result(student_name, student_marks)
