@@ -1,0 +1,18 @@
+# String Methods Program
+
+text = input("Enter a string: ")
+
+print("\nOriginal String:", text)
+print("Upper Case:", text.upper())
+print("Lower Case:", text.lower())
+print("Title Case:", text.title())
+print("Capitalize:", text.capitalize())
+print("Length:", len(text))
+print("Replace 'a' with '@':", text.replace("a", "@"))
+print("Count of 'a':", text.count("a"))
+print("Starts with 'H':", text.startswith("H"))
+print("Ends with 'n':", text.endswith("n"))
+print("Is Alphabet:", text.isalpha())
+print("Is Digit:", text.isdigit())
+print("Is Alphanumeric:", text.isalnum())
+print("Remove Extra Spaces:", text.strip())
