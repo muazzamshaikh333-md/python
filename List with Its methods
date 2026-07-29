@@ -1,0 +1,34 @@
+fruits = ["Apple", "Banana", "Mango"]
+
+print("Original List:", fruits)
+
+fruits.append("Orange")
+print("After append():", fruits)
+
+fruits.insert(1, "Grapes")
+print("After insert():", fruits)
+
+fruits.extend(["Pineapple", "Kiwi"])
+print("After extend():", fruits)
+
+fruits.remove("Banana")
+print("After remove():", fruits)
+
+fruits.pop(2)
+print("After pop():", fruits)
+
+fruits.sort()
+print("After sort():", fruits)
+
+fruits.reverse()
+print("After reverse():", fruits)
+
+print("Count of Apple:", fruits.count("Apple"))
+
+print("Index of Orange:", fruits.index("Orange"))
+
+new_list = fruits.copy()
+print("Copied List:", new_list)
+
+new_list.clear()
+print("After clear():", new_list)
