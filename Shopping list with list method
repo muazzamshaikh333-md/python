@@ -1,0 +1,26 @@
+items = []
+
+n = int(input("Enter number of items: "))
+
+for i in range(n):
+    item = input("Enter item: ")
+    items.append(item)
+
+print("\nShopping List:", items)
+
+items.insert(1, "Milk")
+print("After insert:", items)
+
+items.remove(items[0])
+print("After remove:", items)
+
+items.extend(["Soap", "Shampoo"])
+print("After extend:", items)
+
+items.sort()
+print("After sort:", items)
+
+items.reverse()
+print("After reverse:", items)
+
+print("Total items:", len(items))
