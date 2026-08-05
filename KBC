@@ -1,0 +1,32 @@
+questions = [
+    ["Who is the Prime Minister of India?", "Narendra Modi", "Rahul Gandhi", "Arvind Kejriwal", "Mamata Banerjee", 1],
+    ["Which language is used for AI and Data Science?", "Java", "Python", "C", "PHP", 2],
+    ["What is the capital of Maharashtra?", "Mumbai", "Pune", "Nagpur", "Nashik", 1],
+    ["Which planet is called the Red Planet?", "Earth", "Mars", "Jupiter", "Venus", 2],
+    ["How many continents are there?", "5", "6", "7", "8", 3]
+]
+
+levels = [1000, 5000, 10000, 50000, 100000]
+
+money = 0
+
+for i in range(len(questions)):
+    q = questions[i]
+
+    print(f"\nQuestion {i+1} for ₹{levels[i]}")
+    print(q[0])
+    print("1.", q[1])
+    print("2.", q[2])
+    print("3.", q[3])
+    print("4.", q[4])
+
+    answer = int(input("Enter your answer (1-4): "))
+
+    if answer == q[5]:
+        print("Correct Answer!")
+        money = levels[i]
+    else:
+        print("Wrong Answer!")
+        break
+
+print("\nYou are taking home ₹", money)
