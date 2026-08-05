@@ -1,0 +1,28 @@
+t = (10, 20, 30, 40, 50)
+
+print("Original Tuple:", t)
+
+l = list(t)
+print("Tuple to List:", l)
+
+l.append(60)
+print("After Append:", l)
+
+l.insert(2, 25)
+print("After Insert:", l)
+
+l.remove(40)
+print("After Remove:", l)
+
+l.pop()
+print("After Pop:", l)
+
+l.sort()
+print("After Sort:", l)
+
+l.reverse()
+print("After Reverse:", l)
+
+t = tuple(l)
+
+print("List to Tuple:", t)
