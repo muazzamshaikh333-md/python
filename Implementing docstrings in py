@@ -1,0 +1,12 @@
+def add(a, b):
+    """
+    This function adds two numbers
+    and returns the result.
+    """
+    return a + b
+
+x = int(input("Enter first number: "))
+y = int(input("Enter second number: "))
+
+print("Sum:", add(x, y))
+print(add.__doc__)
