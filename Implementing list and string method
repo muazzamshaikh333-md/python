@@ -1,0 +1,23 @@
+fruits = ["apple", "banana", "mango"]
+
+fruits.append("orange")
+fruits.insert(1, "grapes")
+fruits.remove("banana")
+fruits.sort()
+
+print("Updated List:", fruits)
+
+text = "python programming"
+
+print("Upper:", text.upper())
+print("Title:", text.title())
+print("Replace:", text.replace("python", "Java"))
+print("Count of m:", text.count("m"))
+print("Starts with p:", text.startswith("p"))
+print("Ends with g:", text.endswith("g"))
+
+words = text.split()
+print("Split:", words)
+
+joined = "-".join(words)
+print("Join:", joined)
