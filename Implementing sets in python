@@ -1,0 +1,56 @@
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+
+print("A =", A)
+print("B =", B)
+
+print("Union =", A.union(B))
+
+C = A.copy()
+C.update(B)
+print("Union Update =", C)
+
+print("Intersection =", A.intersection(B))
+
+C = A.copy()
+C.intersection_update(B)
+print("Intersection Update =", C)
+
+print("Difference =", A.difference(B))
+
+C = A.copy()
+C.difference_update(B)
+print("Difference Update =", C)
+
+print("Symmetric Difference =", A.symmetric_difference(B))
+
+C = A.copy()
+C.symmetric_difference_update(B)
+print("Symmetric Difference Update =", C)
+
+print("A is Disjoint from B =", A.isdisjoint(B))
+
+D = {1, 2}
+print("D is Subset of A =", D.issubset(A))
+
+print("A is Superset of D =", A.issuperset(D))
+
+C = A.copy()
+C.add(10)
+print("After Add =", C)
+
+C.remove(10)
+print("After Remove =", C)
+
+C.discard(10)
+print("After Discard =", C)
+
+E = A.copy()
+print("Copied Set =", E)
+
+E.clear()
+print("After Clear =", E)
+
+print("Length of A =", len(A))
+print("Is 3 in A =", 3 in A)
+print("Is 10 not in A =", 10 not in A)
