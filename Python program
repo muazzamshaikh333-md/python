@@ -1,0 +1,21 @@
+list1 = [10, 20, 30, 40, 50]
+tuple1 = (10, 20, 30, 40, 50)
+set1 = {10, 20, 30, 40, 50}
+
+print("List:", list1)
+print("Tuple:", tuple1)
+print("Set:", set1)
+
+list1.append(60)
+print("List after append:", list1)
+
+print("Tuple first element:", tuple1[0])
+
+set1.add(60)
+print("Set after add:", set1)
+
+list1.remove(20)
+print("List after remove:", list1)
+
+set1.remove(30)
+print("Set after remove:", set1)
