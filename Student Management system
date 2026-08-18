@@ -1,0 +1,128 @@
+# Student Management System
+
+students = []
+
+
+def add_student():
+    print("\n--- Add Student ---")
+
+    roll_no = int(input("Enter Roll Number: "))
+    name = input("Enter Student Name: ")
+    
+    marks1 = float(input("Enter Python Marks: "))
+    marks2 = float(input("Enter C++ Marks: "))
+    marks3 = float(input("Enter DSA Marks: "))
+
+    total = marks1 + marks2 + marks3
+    percentage = total / 3
+
+    if percentage >= 75:
+        grade = "A"
+    elif percentage >= 60:
+        grade = "B"
+    elif percentage >= 50:
+        grade = "C"
+    elif percentage >= 35:
+        grade = "D"
+    else:
+        grade = "F"
+
+    student = {
+        "roll_no": roll_no,
+        "name": name,
+        "python": marks1,
+        "cpp": marks2,
+        "dsa": marks3,
+        "total": total,
+        "percentage": percentage,
+        "grade": grade
+    }
+
+    students.append(student)
+
+    print("\nStudent added successfully!")
+
+
+def display_students():
+    print("\n--- Student Records ---")
+
+    if len(students) == 0:
+        print("No student records found.")
+        return
+
+    for student in students:
+        print("----------------------------")
+        print("Roll No     :", student["roll_no"])
+        print("Name        :", student["name"])
+        print("Python      :", student["python"])
+        print("C++         :", student["cpp"])
+        print("DSA         :", student["dsa"])
+        print("Total       :", student["total"])
+        print("Percentage  :", student["percentage"])
+        print("Grade       :", student["grade"])
+
+
+def search_student():
+    print("\n--- Search Student ---")
+
+    roll_no = int(input("Enter Roll Number: "))
+
+    for student in students:
+        if student["roll_no"] == roll_no:
+            print("\nStudent Found!")
+            print("Name       :", student["name"])
+            print("Python     :", student["python"])
+            print("C++        :", student["cpp"])
+            print("DSA        :", student["dsa"])
+            print("Percentage :", student["percentage"])
+            print("Grade      :", student["grade"])
+            return
+
+    print("Student not found.")
+
+
+def delete_student():
+    print("\n--- Delete Student ---")
+
+    roll_no = int(input("Enter Roll Number: "))
+
+    for student in students:
+        if student["roll_no"] == roll_no:
+            students.remove(student)
+            print("Student deleted successfully!")
+            return
+
+    print("Student not found.")
+
+
+# Main Program
+while True:
+    print("\n==============================")
+    print("   STUDENT MANAGEMENT SYSTEM")
+    print("==============================")
+    print("1. Add Student")
+    print("2. Display Students")
+    print("3. Search Student")
+    print("4. Delete Student")
+    print("5. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        add_student()
+
+    elif choice == 2:
+        display_students()
+
+    elif choice == 3:
+        search_student()
+
+    elif choice == 4:
+        delete_student()
+
+    elif choice == 5:
+        print("Thank you for using the system!")
+        break
+
+    else:
+        print("Invalid choice! Please try again.")
