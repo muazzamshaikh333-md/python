@@ -1,0 +1,27 @@
+import numpy as np
+
+# Create two arrays
+A = np.array([10, 20, 30, 40, 50])
+B = np.array([5, 10, 15, 20, 25])
+
+print("Array A:", A)
+print("Array B:", B)
+
+# Addition
+print("Addition:", A + B)
+
+# Subtraction
+print("Subtraction:", A - B)
+
+# Multiplication
+print("Multiplication:", A * B)
+
+# Maximum and Minimum
+print("Maximum in A:", np.max(A))
+print("Minimum in A:", np.min(A))
+
+# Mean
+print("Mean of A:", np.mean(A))
+
+# Sum
+print("Sum of A:", np.sum(A))
