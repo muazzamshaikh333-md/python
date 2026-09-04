@@ -1,0 +1,104 @@
+def add_student():
+    roll = input("Enter Roll No: ")
+    name = input("Enter Name: ")
+    marks = input("Enter Marks: ")
+
+    with open("students.txt", "a") as file:
+        file.write(f"{roll},{name},{marks}\n")
+
+    print("Student added successfully!")
+
+
+def display_students():
+    try:
+        with open("students.txt", "r") as file:
+            records = file.readlines()
+
+            if not records:
+                print("No records found.")
+                return
+
+            print("\n--- Student Records ---")
+            for record in records:
+                roll, name, marks = record.strip().split(",")
+                print(f"Roll: {roll} | Name: {name} | Marks: {marks}")
+
+    except FileNotFoundError:
+        print("File does not exist.")
+
+
+def search_student():
+    roll = input("Enter Roll No to search: ")
+
+    try:
+        with open("students.txt", "r") as file:
+            for record in file:
+                r, name, marks = record.strip().split(",")
+
+                if r == roll:
+                    print("\nStudent Found!")
+                    print("Name:", name)
+                    print("Marks:", marks)
+                    return
+
+        print("Student not found.")
+
+    except FileNotFoundError:
+        print("File does not exist.")
+
+
+def delete_student():
+    roll = input("Enter Roll No to delete: ")
+
+    try:
+        with open("students.txt", "r") as file:
+            records = file.readlines()
+
+        found = False
+
+        with open("students.txt", "w") as file:
+            for record in records:
+                r, name, marks = record.strip().split(",")
+
+                if r == roll:
+                    found = True
+                else:
+                    file.write(record)
+
+        if found:
+            print("Student deleted successfully!")
+        else:
+            print("Student not found.")
+
+    except FileNotFoundError:
+        print("File does not exist.")
+
+
+while True:
+    print("\n===== STUDENT MANAGEMENT SYSTEM =====")
+    print("1. Add Student")
+    print("2. Display Students")
+    print("3. Search Student")
+    print("4. Delete Student")
+    print("5. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        add_student()
+
+    elif choice == "2":
+        display_students()
+
+    elif choice == "3":
+        search_student()
+
+    elif choice == "4":
+        delete_student()
+
+    elif choice == "5":
+        print("Program ended.")
+        break
+
+    else:
+        print("Invalid choice!")
