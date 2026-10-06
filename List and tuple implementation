@@ -1,0 +1,16 @@
+# List
+students = ["Muazzam", "Rahul", "Aman", "Sahil"]
+
+print("List:", students)
+print("First student:", students[0])
+
+students.append("Rohan")
+print("After adding:", students)
+
+# Tuple
+marks = (85, 90, 78, 92)
+
+print("\nTuple:", marks)
+print("First mark:", marks[0])
+print("Total marks:", sum(marks))
+print("Highest mark:", max(marks))
