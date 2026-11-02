@@ -1,0 +1,28 @@
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+head = Node(10)
+head.next = Node(20)
+head.next.next = Node(30)
+
+key = 20
+
+if head and head.data == key:
+    head = head.next
+else:
+    temp = head
+
+    while temp and temp.next:
+        if temp.next.data == key:
+            temp.next = temp.next.next
+            break
+        temp = temp.next
+
+while head:
+    print(head.data, end=" -> ")
+    head = head.next
+
+print("None")
