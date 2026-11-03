@@ -1,0 +1,20 @@
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+head = Node(15)
+head.next = Node(45)
+head.next.next = Node(25)
+head.next.next.next = Node(60)
+
+maximum = head.data
+temp = head
+
+while temp:
+    if temp.data > maximum:
+        maximum = temp.data
+    temp = temp.next
+
+print("Maximum element:", maximum)
