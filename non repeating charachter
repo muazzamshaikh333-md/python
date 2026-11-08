@@ -1,0 +1,8 @@
+s = "aabbcdeff"
+
+for i in s:
+    if s.count(i) == 1:
+        print("First Non-Repeating Character:", i)
+        break
+else:
+    print("No non-repeating character found")
