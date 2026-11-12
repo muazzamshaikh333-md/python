@@ -1,0 +1,19 @@
+stack = []
+
+# Push operation
+stack.append(10)
+stack.append(20)
+stack.append(30)
+
+print("Stack:", stack)
+
+# Pop operation
+stack.pop()
+
+print("After Pop:", stack)
+
+# Top element
+print("Top Element:", stack[-1])
+
+# Stack size
+print("Stack Size:", len(stack))
